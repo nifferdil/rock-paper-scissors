@@ -35,7 +35,7 @@ public class RockPaperScissors {
 
        String result = checkWinner(userOneInput, userTwoInput);
        model.put("result", result);
-       model.put("detector", request.queryParams("detector"));
+      // model.put("detector", request.queryParams("detector"));
        return new ModelAndView(new HashMap(), layout);
      }, new VelocityTemplateEngine());
   }
@@ -61,8 +61,8 @@ public class RockPaperScissors {
     // scissors loses to rock
     // paper loses to scissors
 
-    if (oneInput == twoInput) {
-      return "It's a tie!";
+    if (oneInput == 0) {
+      return "You entered rock";
     } else if (oneInput == 0 && twoInput == 2) {
       return "Rock crushes scissors.";
     } else {
